@@ -1,5 +1,5 @@
 # Protected Download Area
 AuthType Basic
 AuthName "Private Protected Download Center"
-AuthUserFile /var/www/-path/to/passwd/directory-/download-center/.htpasswd
+AuthUserFile ###PATHTOHT###/.htpasswd
 Require valid-user

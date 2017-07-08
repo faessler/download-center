@@ -13,21 +13,34 @@
             <h1>###DCNAME###</h1>
             <ul>
                 <?php
+                    // Path to file directory
                     $path = "files/";
+
+                    // Creating Array
                     $files = array_slice(scandir($path), 2);
-                    foreach ($files as &$value) {
-                        $filesize = filesize($path.$value);
-                        if ($filesize < 1000) {
-                            $filesize = filesize($path.$value)." B";
-                        } elseif ($filesize < 1000000) {
-                            $filesize = round((filesize($path.$value)/1000), 2)." KB";
-                        } elseif ($filesize < 1000000000) {
-                            $filesize = round((filesize($path.$value)/1000000), 2)." MB";
+                    print_r($files);
+
+                    // Sorting Array
+                    $array_lowercase = array_map('strtolower', $files);
+                    array_multisort($array_lowercase, SORT_ASC, SORT_STRING, $files);
+                    print_r($files);
+
+                    // Output Array
+                    foreach ($files as &$file) {
+                        $path_parts = pathinfo($file);
+                        $originalFilesize = filesize($path.$file);
+
+                        if ($originalFilesize < 1000) {
+                            $filesize = filesize($path.$file)." B";
+                        } elseif ($originalFilesize < 1000000) {
+                            $filesize = round((filesize($path.$file)/1000), 2)." KB";
+                        } elseif ($originalFilesize < 1000000000) {
+                            $filesize = round((filesize($path.$file)/1000000), 2)." MB";
                         } else {
-                            $filesize = round((filesize($path.$value)/1000000000), 2)." GB";
+                            $filesize = round((filesize($path.$file)/1000000000), 2)." GB";
                         }
 
-                        echo "<li><a href='".$path.$value."' download><span class='filename'>".$value."</span><span class='filesize'>".$filesize."</span>"."</a></li>";
+                        echo "<li><a href='".$path.$file."' class='file' onclick='downloadProgress(this)' download><span class='filename'>".$file."</span><span class='filesize'>".$filesize."</span>"."</a></li>";
                     }
                 ?>
             </ul>

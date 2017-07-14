@@ -1,0 +1,5 @@
+# Protected Download Area
+AuthType Basic
+AuthName "Private Protected Download Center"
+AuthUserFile ./.htpasswd
+Require valid-user

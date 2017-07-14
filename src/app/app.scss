@@ -1,0 +1,237 @@
+// ================== //
+// VARIABLES
+// ================== //
+$darkblue: #2c3e50;
+$white: #ecf0f1;
+
+
+
+// ================== //
+// TOP LAYER
+// ================== //
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $darkblue;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.wrapper {
+    width: 600px;
+    margin: 60px auto;
+}
+
+
+
+// ================== //
+// FONTS & HEADINGS
+// ================== //
+h1 {
+    margin-bottom: 20px;
+    color: $white;
+}
+
+
+
+// ================== //
+// LIST
+// ================== //
+// list header
+.list__header {
+    display: table;
+    table-layout: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    color: $white;
+}
+.list__header__back {
+    display: table-cell;
+    white-space: nowrap;
+
+    a {
+        cursor: pointer;
+    }
+}
+.list__header__path {
+    display: table-cell;
+    padding-left: 30px;
+    font-size: 80%;
+    text-align: right;
+    word-break: break-word;
+}
+
+// list
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        &+li a {
+            border-top: 1px solid $darkblue;
+        }
+        &.extgroup {
+            text-transform: uppercase;
+            color: $white;
+            margin: 25px 0 5px;
+        }
+        &.folder {
+            a {
+                &:before {
+                    content: "\f114";
+                }
+            }
+        }
+        a {
+            position: relative;
+            display: block;
+            padding: 20px 20px 20px 43px;
+            background-color: $white;
+            cursor: pointer;
+            color: $darkblue;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #bdc3c7;
+            }
+            &:before {
+                position: absolute;
+                left: 20px;
+                padding-right: 10px;
+                font-family: fontawesome;
+                font-size: 100%;
+                content: "\f016";
+            }
+            &[href$=".txt"]:before {
+                content: "\f0f6";
+            }
+            &[href$=".pdf"]:before {
+                content: "\f1c1";
+            }
+            &[href$=".doc"]:before,
+            &[href$=".docx"]:before {
+                content: "\f1c2";
+            }
+            &[href$=".xlsx"]:before,
+            &[href$=".xls"]:before {
+                content: "\f1c3";
+            }
+            &[href$=".ppt"]:before,
+            &[href$=".pptx"]:before {
+                content: "\f1c4";
+            }
+            &[href$=".png"]:before,
+            &[href$=".jpg"]:before,
+            &[href$=".jpeg"]:before,
+            &[href$=".gif"]:before,
+            &[href$=".tiff"]:before,
+            &[href$=".svg"]:before,
+            &[href$=".svgz"]:before,
+            &[href$=".eps"]:before {
+                content: "\f1c5";
+            }
+            &[href$=".zip"]:before,
+            &[href$=".7z"]:before,
+            &[href$=".rar"]:before,
+            &[href$=".tar"]:before,
+            &[href$=".tar.gz"]:before {
+                content: "\f1c6";
+            }
+            &[href$=".3gp"]:before,
+            &[href$=".m4a"]:before,
+            &[href$=".mp3"]:before,
+            &[href$=".oga"]:before,
+            &[href$=".wma"]:before {
+                content: "\f1c7";
+            }
+            &[href$=".mp4"]:before,
+            &[href$=".m4v"]:before,
+            &[href$=".m4p"]:before,
+            &[href$=".webm"]:before,
+            &[href$=".ogg"]:before,
+            &[href$=".avi"]:before,
+            &[href$=".mov"]:before,
+            &[href$=".wmv"]:before {
+                content: "\f1c8";
+            }
+            &[href$=".html"]:before,
+            &[href$=".php"]:before,
+            &[href$=".ts"]:before,
+            &[href$=".css"]:before,
+            &[href$=".scss"]:before,
+            &[href$=".js"]:before,
+            &[href$=".java"]:before {
+                content: "\f1c9";
+            }
+            &[href$=".ttf"]:before,
+            &[href$=".otf"]:before,
+            &[href$=".woff"]:before,
+            &[href$=".woff2"]:before,
+            &[href$=".eot"]:before {
+                content: "\f031";
+            }
+            .filename {
+
+            }
+            .filesize {
+                display: inline-block;
+                padding-left: 10px;
+                font-size: 55%;
+                font-style: italic;
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+
+
+
+// ================== //
+// RESPONSIVE
+// ================== //
+@media screen and (max-width: 600px) {
+    body {
+        background-color: $white;
+    }
+    .wrapper {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .list__header {
+        margin: 20px 0;
+        color: $darkblue;
+    }
+    .list__header__back {
+        padding-left: 20px;
+    }
+    .list__header__path {
+        padding-right: 20px;
+    }
+    h1 {
+        color: $darkblue;
+        padding: 20px;
+        margin: 0;
+    }
+    ul {
+        li {
+            &.extgroup {
+                text-transform: uppercase;
+                color: $darkblue;
+                margin: 35px 0 0;
+                padding: 0 20px 10px;
+                border-bottom: 1px solid;
+                font-weight: 700;
+            }
+            &+li a {
+                border-top: none;
+            }
+            a {
+                border-bottom: 1px solid $darkblue;
+            }
+        }
+        li:first-child a,
+        .list__header + li a {
+            border-top: 1px solid $darkblue;
+        }
+    }
+}

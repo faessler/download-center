@@ -1,0 +1,158 @@
+// ================== //
+// VARIABLES
+// ================== //
+$darkblue: #2c3e50;
+$white: #ecf0f1;
+
+
+
+// ================== //
+// TOP LAYER
+// ================== //
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $darkblue;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: $darkblue;
+}
+.wrapper {
+    width: 600px;
+    margin: 60px auto;
+}
+.content {
+    padding: 20px;
+    background: $white;
+}
+
+
+
+// ================== //
+// FONTS & HEADING
+// ================== //
+h1 {
+    color: $white;
+}
+h3 {
+    margin-top: 0;
+}
+
+
+
+// ================== //
+// FORMULAR
+// ================== //
+form {
+    margin-bottom: 0;
+
+    .formgroup {
+        margin: 20px 0 0;
+    }
+    legend {
+        margin: 0;
+        padding: 0;
+    }
+    label {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 80%;
+    }
+    input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+
+        &[type=checkbox] {
+            height: 14px;
+            margin: 0;
+        }
+        &[type=submit] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: block;
+            width: auto;
+            padding: 10px 20px;
+            background: $darkblue;
+            border: 1px solid $white;
+            color: $white;
+            cursor: pointer;
+
+            &:hover {
+                background: $white;
+                border: 1px solid $darkblue;
+                color: $darkblue;
+            }
+        }
+    }
+}
+
+// info box
+.info {
+    position: relative;
+}
+.info__qmark {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    background: $darkblue;
+    font-size: 70%;
+    text-align: center;
+    border-radius: 100%;
+    cursor: pointer;
+    color: $white;
+
+    &:hover+.info__legend {
+        display: block;
+    }
+}
+.info__legend {
+    display: none;
+    position: absolute;
+    background: $white;
+    z-index: 99;
+    top: -10px;
+    left: 25px;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid $darkblue;
+    border-radius: 5px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: -6px;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid $darkblue;
+        border-bottom: 1px solid $darkblue;
+        transform: rotate(45deg);
+        background: $white;
+    }
+    &:hover {
+        display: block;
+    }
+}
+
+
+
+// ================== //
+// RESPONSIVE
+// ================== //
+@media screen and (max-width: 600px) {
+    body {
+        background-color: $white;
+    }
+    .wrapper {
+        margin: 0 auto;
+        width: 100%;
+    }
+    h1 {
+        color: $darkblue;
+        padding: 20px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "download-center",
+  "version": "1.0.0",
+  "description": "The Download Center is a small lightweight Web App which allows you to safe your files online on your own webhosting. Your files will be password protected with \".htaccess\" & \".htpasswd\", if you wish to have an open Download Center you simply can remove those two files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faessler/download-center.git"
+  },
+  "author": "Jan Fässler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faessler/download-center/issues"
+  },
+  "homepage": "https://github.com/faessler/download-center#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "event-stream": "^3.3.4",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.6.0",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
